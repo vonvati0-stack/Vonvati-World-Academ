@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vonvati World Academy — Escuela de Baile en Guadalajara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #fafafa;
+    --red: #c8102e;
+    --red-dark: #a00d24;
+    --gray-100: #f2f2f2;
+    --gray-200: #e0e0e0;
+    --gray-400: #999;
+    --gray-600: #555;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 5%;
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 9px 22px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 1.5px; background: var(--white); display: block; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: var(--black);
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 5% 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 80% 50%, rgba(200,16,46,0.12) 0%, transparent 70%);
+  }
+  .hero-lines {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,1) 80px);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 28px;
+    opacity: 0; animation: fadeUp .8s .2s forwards;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 28px; height: 1px; background: var(--red);
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    line-height: 1.04;
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 10px;
+    opacity: 0; animation: fadeUp .9s .35s forwards;
+  }
+  .hero-title em { font-style: italic; color: var(--red); }
+  .hero-title .line2 {
+    display: block;
+    font-weight: 600;
+    -webkit-text-stroke: 0px;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.52);
+    max-width: 480px;
+    margin-top: 28px;
+    margin-bottom: 44px;
+    opacity: 0; animation: fadeUp .9s .5s forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp .9s .65s forwards;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 16px 36px;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    transition: background .25s, transform .2s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    padding: 15px 32px;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+    transition: border-color .25s, color .25s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+  .hero-stats {
+    position: absolute; right: 5%; bottom: 60px;
+    display: flex; gap: 48px;
+    opacity: 0; animation: fadeUp .9s .8s forwards;
+  }
+  .stat { text-align: right; }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--red); }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 5%; }
+  .section-tag {
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--red); display: flex; align-items: center; gap: 10px;
+    margin-bottom: 18px; font-weight: 500;
+  }
+  .section-tag::before { content: ''; width: 24px; height: 1px; background: var(--red); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .section-title strong { font-weight: 600; }
+  .divider { width: 48px; height: 2px; background: var(--red); margin: 28px 0; }
+
+  /* ─── SOBRE NOSOTROS ─── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center; max-width: 1200px; margin: 0 auto;
+  }
+  .about-text p {
+    font-size: 1rem; line-height: 1.8; color: var(--gray-600);
+    margin-bottom: 20px;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-card {
+    background: var(--black);
+    color: var(--white);
+    padding: 52px 44px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%; background: var(--red);
+  }
+  .about-card-quote {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 28px;
+  }
+  .about-pillars {
+    display: flex; flex-direction: column; gap: 16px; margin-top: 40px;
+  }
+  .pillar {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 0.88rem; color: var(--gray-600);
+  }
+  .pillar-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+
+  /* ─── CLASES ─── */
+  #classes { background: var(--black); }
+  #classes .section-title { color: var(--white); }
+  #classes .section-tag { margin-left: 0; }
+  .classes-intro { color: rgba(255,255,255,0.5); max-width: 480px; margin-bottom: 56px; line-height: 1.7; }
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .class-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 36px 28px;
+    transition: background .3s, border-color .3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .class-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--red);
+    transition: width .4s;
+  }
+  .class-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+  .class-card:hover::after { width: 100%; }
+  .class-icon { font-size: 1.8rem; margin-bottom: 16px; }
+  .class-name {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .class-desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
+  .class-badge {
+    display: inline-block; margin-top: 12px;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); border: 1px solid rgba(200,16,46,0.4); padding: 3px 8px; border-radius: 2px;
+  }
+
+  /* ─── PRECIOS ─── */
+  #pricing { background: var(--gray-100); }
+  .pricing-header { max-width: 600px; margin-bottom: 60px; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+  }
+  .price-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    padding: 36px 30px;
+    position: relative;
+    transition: box-shadow .3s, transform .3s;
+  }
+  .price-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.1); transform: translateY(-4px); }
+  .price-card.featured {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+  }
+  .price-card.featured .price-name { color: rgba(255,255,255,0.5); }
+  .price-card.featured .price-amount { color: var(--white); }
+  .price-card.featured .price-desc { color: rgba(255,255,255,0.5); }
+  .price-card.featured .price-feature { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1); }
+  .featured-badge {
+    position: absolute; top: -1px; right: 24px;
+    background: var(--red); color: var(--white);
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 0 0 4px 4px; font-weight: 500;
+  }
+  .price-name { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; }
+  .price-amount {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .price-amount sup { font-size: 1.2rem; vertical-align: super; }
+  .price-period { font-size: 0.78rem; color: var(--gray-400); margin-bottom: 20px; }
+  .price-divider { height: 1px; background: var(--gray-200); margin: 20px 0; }
+  .price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
+  .price-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .price-feature {
+    font-size: 0.85rem; color: var(--gray-600);
+    display: flex; align-items: flex-start; gap: 10px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--gray-100);
+  }
+  .price-feature:last-child { border: none; padding: 0; }
+  .check { color: var(--red); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .price-cta {
+    display: block; text-align: center;
+    background: var(--black); color: var(--white);
+    padding: 14px; border-radius: 2px;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; font-weight: 500;
+    transition: background .25s;
+  }
+  .price-cta:hover { background: #222; }
+  .price-card.featured .price-cta { background: var(--red); }
+  .price-card.featured .price-cta:hover { background: var(--red-dark); }
+  .pricing-note {
+    margin-top: 48px; text-align: center;
+    font-size: 0.85rem; color: var(--gray-400);
+    max-width: 600px; margin-left: auto; margin-right: auto;
+    margin-top: 48px;
+  }
+
+  /* ─── CÓMO FUNCIONA ─── */
+  #how { background: var(--white); }
+  .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; }
+  .how-card {
+    padding: 40px;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    position: relative;
+  }
+  .how-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px; background: var(--black);
+    border-radius: 4px 4px 0 0;
+  }
+  .how-number {
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--gray-200);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .how-title { font-size: 1.15rem; font-weight: 500; margin-bottom: 14px; }
+  .how-text { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
+  .how-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .how-item { display: flex; gap: 10px; font-size: 0.85rem; color: var(--gray-600); }
+  .how-item::before { content: '—'; color: var(--red); flex-shrink: 0; }
+
+  /* ─── EXPERIENCIA ─── */
+  #experience { background: var(--black); }
+  #experience .section-title { color: var(--white); }
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1100px;
+    margin-top: 56px;
+  }
+  .exp-card {
+    padding: 44px 36px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+  }
+  .exp-icon { font-size: 2rem; margin-bottom: 20px; }
+  .exp-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .exp-text { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+
+  /* ─── RESEÑAS ─── */
+  #reviews { background: var(--gray-100); }
+  .stars { color: #f4b400; font-size: 1rem; margin-bottom: 8px; letter-spacing: 2px; }
+  .reviews-header { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 56px; flex-wrap: wrap; }
+  .overall-score {
+    font-family: var(--serif);
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--black);
+  }
+  .reviews-meta { padding-bottom: 12px; }
+  .reviews-meta .stars { font-size: 1.2rem; }
+  .reviews-meta p { font-size: 0.82rem; color: var(--gray-400); margin-top: 6px; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; max-width: 1100px;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 28px;
+    border: 1px solid var(--gray-200);
+  }
+  .review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .review-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--black); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 600;
+    flex-shrink: 0;
+  }
+  .review-name { font-weight: 500; font-size: 0.9rem; }
+  .review-date { font-size: 0.75rem; color: var(--gray-400); margin-top: 2px; }
+  .review-text { font-size: 0.87rem; color: var(--gray-600); line-height: 1.7; }
+
+  /* ─── TESTIMONIOS ─── */
+  #testimonials { background: var(--white); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px; max-width: 1100px; margin-top: 56px;
+  }
+  .testimonial {
+    padding: 40px;
+    border-left: 3px solid var(--red);
+    background: var(--gray-100);
+    border-radius: 0 4px 4px 0;
+  }
+  .testimonial-quote {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 24px;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--red); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 600; flex-shrink: 0;
+  }
+  .testimonial-name { font-weight: 500; font-size: 0.88rem; }
+  .testimonial-detail { font-size: 0.75rem; color: var(--gray-400); margin-top: 2px; }
+
+  /* ─── MAPA ─── */
+  #location { background: var(--black); padding-bottom: 0; }
+  #location .section-title { color: var(--white); }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .location-info { padding-bottom: 100px; }
+  .location-detail {
+    display: flex; gap: 14px;
+    margin-bottom: 28px;
+  }
+  .location-icon { color: var(--red); font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+  .location-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+  .location-value { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .map-wrapper {
+    width: 100%; height: 460px;
+    filter: grayscale(30%) contrast(1.1);
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    align-self: end;
+  }
+  .map-wrapper iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  /* ─── CTA BAND ─── */
+  #cta {
+    background: var(--red);
+    padding: 80px 5%;
+    text-align: center;
+  }
+  #cta h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  #cta h2 strong { font-weight: 600; }
+  #cta p { color: rgba(255,255,255,0.75); margin-bottom: 36px; font-size: 1rem; }
+  #cta .btn-white {
+    background: var(--white);
+    color: var(--red);
+    padding: 16px 44px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none; border-radius: 2px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform .2s, box-shadow .2s;
+  }
+  #cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+
+  /* ─── FORMULARIO ─── */
+  #form-section { background: var(--white); }
+  .form-wrapper {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    max-width: 1100px; align-items: center;
+  }
+  .form-intro p { font-size: 0.95rem; color: var(--gray-600); line-height: 1.8; max-width: 400px; }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); }
+  .form-group input, .form-group select {
+    border: 1px solid var(--gray-200);
+    border-radius: 2px;
+    padding: 13px 16px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--black);
+    background: var(--white);
+    transition: border-color .25s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--black); }
+  .form-submit {
+    background: var(--black);
+    color: var(--white);
+    padding: 15px;
+    border: none; border-radius: 2px; cursor: pointer;
+    font-family: var(--sans);
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 500; margin-top: 8px;
+    transition: background .25s;
+  }
+  .form-submit:hover { background: var(--red); }
+  .payment-badges {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px;
+  }
+  .payment-badge {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    padding: 8px 16px; border-radius: 2px;
+    font-size: 0.8rem; color: var(--gray-600);
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    padding: 60px 5% 36px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px; max-width: 1100px; margin-bottom: 48px;
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+  .footer-brand span { color: var(--red); }
+  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.35); max-width: 280px; line-height: 1.6; }
+  .footer-col h4 {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.87rem; transition: color .2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;
+    gap: 16px;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+  .footer-social { display: flex; gap: 16px; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none; font-size: 0.8rem;
+    transition: border-color .25s, color .25s;
+  }
+  .footer-social a:hover { border-color: var(--red); color: var(--red); }
+
+  /* ─── WHATSAPP FLOAT ─── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    background: #25d366;
+    color: var(--white);
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    animation: pulse 2.5s infinite;
+    transition: transform .2s;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .about-grid, .how-grid, .location-grid, .form-wrapper, .footer-grid { grid-template-columns: 1fr; }
+    .hero-stats { position: static; margin-top: 48px; justify-content: flex-start; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .location-info { padding-bottom: 0; }
+    .map-wrapper { height: 320px; border-radius: 4px; }
+    .footer-grid { gap: 36px; }
+    nav { padding: 14px 4%; }
+    section { padding: 70px 4%; }
+  }
+  @media (max-width: 600px) {
+    .hero-title { font-size: 2.8rem; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .classes-grid { grid-template-columns: 1fr 1fr; }
+    .stat-num { font-size: 2rem; }
+    .overall-score { font-size: 3.5rem; }
+    .hero-stats { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#" class="nav-logo">Vonvati<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#classes">Clases</a></li>
+    <li><a href="#pricing">Precios</a></li>
+    <li><a href="#location">Ubicación</a></li>
+    <li><a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank" class="nav-cta">Inscríbete</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(10,10,10,0.98); z-index:99; flex-direction:column; align-items:center; justify-content:center; gap:32px;">
+  <a href="#about" onclick="toggleMenu()" style="color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase;">Nosotros</a>
+  <a href="#classes" onclick="toggleMenu()" style="color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase;">Clases</a>
+  <a href="#pricing" onclick="toggleMenu()" style="color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase;">Precios</a>
+  <a href="#location" onclick="toggleMenu()" style="color:rgba(255,255,255,0.8);text-decoration:none;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase;">Ubicación</a>
+  <a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank" class="btn-primary">Inscríbete ahora</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Guadalajara, México</div>
+    <h1 class="hero-title">
+      Aprende a<br>
+      <em>bailar</em>
+      <span class="line2">desde cero.</span>
+    </h1>
+    <p class="hero-sub">Una academia boutique donde el ritmo, la confianza y la comunidad se convierten en tu mejor versión.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank" class="btn-primary">Inscríbete ahora</a>
+      <a href="#classes" class="btn-outline">Ver clases</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">8<span>+</span></div>
+      <div class="stat-label">Estilos de baile</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5<span>★</span></div>
+      <div class="stat-label">Valoración Google</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Ambiente profesional</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="section-tag">Sobre nosotros</div>
+      <h2 class="section-title">Más que una<br><strong>escuela de baile</strong></h2>
+      <div class="divider"></div>
+      <p>Vonvati World Academy nació con una visión clara: crear un espacio donde cualquier persona, sin importar su experiencia, pueda descubrir el baile como herramienta de transformación personal.</p>
+      <p>Somos una comunidad activa en Guadalajara con instructores apasionados, metodología probada y un ambiente que combina profesionalismo con diversión real.</p>
+      <div class="about-pillars">
+        <div class="pillar"><span class="pillar-dot"></span>Instructores certificados con experiencia internacional</div>
+        <div class="pillar"><span class="pillar-dot"></span>Clases para todos los niveles: principiante a avanzado</div>
+        <div class="pillar"><span class="pillar-dot"></span>Grupos pequeños para atención personalizada</div>
+        <div class="pillar"><span class="pillar-dot"></span>Eventos sociales y convivios mensuales</div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-card">
+        <p class="about-card-quote">"El baile no es solo movimiento, es la forma más honesta de expresar quién eres."</p>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.35);letter-spacing:0.1em;text-transform:uppercase;">— Vonvati World Academy</div>
+        <div style="margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;">Nuestro compromiso</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:10px;font-size:0.85rem;color:rgba(255,255,255,0.65);">
+              <span style="color:var(--red)">✓</span> Aprende a tu ritmo, a tu tiempo
+            </div>
+            <div style="display:flex;gap:10px;font-size:0.85rem;color:rgba(255,255,255,0.65);">
+              <span style="color:var(--red)">✓</span> Confianza en cada clase
+            </div>
+            <div style="display:flex;gap:10px;font-size:0.85rem;color:rgba(255,255,255,0.65);">
+              <span style="color:var(--red)">✓</span> Comunidad que te apoya
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLASES ─── -->
+<section id="classes">
+  <div class="section-tag" style="color:var(--red)">Lo que enseñamos</div>
+  <h2 class="section-title" style="color:var(--white)">Elige tu<br><strong>estilo favorito</strong></h2>
+  <p class="classes-intro">Desde la salsa más elegante hasta los ritmos más urbanos, tenemos el estilo que va contigo.</p>
+  <div class="classes-grid reveal">
+    <div class="class-card">
+      <div class="class-icon">💃</div>
+      <div class="class-name">Salsa</div>
+      <div class="class-desc">Nuestro estilo principal. Ritmo, elegancia y sabor latino en cada paso.</div>
+      <span class="class-badge">Principal</span>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">🎶</div>
+      <div class="class-name">Bachata</div>
+      <div class="class-desc">Sensual y expresiva. El baile de pareja más popular del mundo.</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">🎺</div>
+      <div class="class-name">Cumbia</div>
+      <div class="class-desc">Raíces mexicanas, alegría pura. Aprende a bailar lo que todos bailan.</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">🌀</div>
+      <div class="class-name">Salsa Cubana</div>
+      <div class="class-desc">Círculos, casino y mucho sabor caribeño. Baile social por excelencia.</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">🎵</div>
+      <div class="class-name">House</div>
+      <div class="class-desc">Estilo urbano con roots en Chicago. Groove, libertad y expresión.</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">👠</div>
+      <div class="class-name">Heels</div>
+      <div class="class-desc">Empoderamiento femenino. Fuerza, sensualidad y actitud en cada movimiento.</div>
+    </div>
+    <div class="class-card">
+      <div class="class-icon">⭐</div>
+      <div class="class-name">Salsa Kids</div>
+      <div class="class-desc">Para los más pequeños. Lunes y miércoles 7:00 pm. Ritmo desde temprana edad.</div>
+      <span class="class-badge">Niños</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRECIOS ─── -->
+<section id="pricing">
+  <div class="pricing-header reveal">
+    <div class="section-tag">Inversión</div>
+    <h2 class="section-title">Planes que se<br><strong>adaptan a ti</strong></h2>
+    <p style="color:var(--gray-600);line-height:1.7;font-size:0.95rem;">Sin contratos eternos. Sin letras chicas. Solo elige el plan que encaja con tu agenda y presupuesto.</p>
+  </div>
+
+  <div class="pricing-grid reveal">
+
+    <!-- Clase suelta -->
+    <div class="price-card">
+      <div class="price-name">Clase suelta</div>
+      <div class="price-amount"><sup>$</sup>150</div>
+      <div class="price-period">por clase · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> Prueba sin compromiso</div>
+        <div class="price-feature"><span class="check">✓</span> Cualquier estilo disponible</div>
+        <div class="price-feature"><span class="check">✓</span> Ideal para conocer el ambiente</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%20clase%20suelta" target="_blank" class="price-cta">Reservar clase</a>
+    </div>
+
+    <!-- 4 clases -->
+    <div class="price-card">
+      <div class="price-name">Paquete 4 clases</div>
+      <div class="price-amount"><sup>$</sup>450</div>
+      <div class="price-period">al mes · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> 4 clases en el mes</div>
+        <div class="price-feature"><span class="check">✓</span> Válidas hasta 2 meses</div>
+        <div class="price-feature"><span class="check">✓</span> Para agendas flexibles</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%20paquete%204%20clases" target="_blank" class="price-cta">Elegir plan</a>
+    </div>
+
+    <!-- 1 curso -->
+    <div class="price-card">
+      <div class="price-name">1 Curso mensual</div>
+      <div class="price-amount"><sup>$</sup>600</div>
+      <div class="price-period">al mes · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> Todas las clases del mes</div>
+        <div class="price-feature"><span class="check">✓</span> Un estilo a elegir</div>
+        <div class="price-feature"><span class="check">✓</span> Distintos horarios disponibles</div>
+        <div class="price-feature"><span class="check">✓</span> Progreso garantizado</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%201%20curso" target="_blank" class="price-cta">Elegir plan</a>
+    </div>
+
+    <!-- 2 cursos — DESTACADO -->
+    <div class="price-card featured">
+      <div class="featured-badge">Más popular</div>
+      <div class="price-name">2 Cursos</div>
+      <div class="price-amount"><sup>$</sup>1,000</div>
+      <div class="price-period">al mes · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> 2 estilos de baile</div>
+        <div class="price-feature"><span class="check">✓</span> Todas las clases del mes</div>
+        <div class="price-feature"><span class="check">✓</span> Ahorra $200 vs individual</div>
+        <div class="price-feature"><span class="check">✓</span> Ideal para progresar rápido</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20inscribirme%20en%202%20cursos" target="_blank" class="price-cta">¡Quiero este plan!</a>
+    </div>
+
+    <!-- 3 cursos -->
+    <div class="price-card">
+      <div class="price-name">3 Cursos</div>
+      <div class="price-amount"><sup>$</sup>1,350</div>
+      <div class="price-period">al mes · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> 3 estilos de baile</div>
+        <div class="price-feature"><span class="check">✓</span> Todas las clases del mes</div>
+        <div class="price-feature"><span class="check">✓</span> Máximo desarrollo</div>
+        <div class="price-feature"><span class="check">✓</span> Ahorra $450 vs individual</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%203%20cursos" target="_blank" class="price-cta">Elegir plan</a>
+    </div>
+
+    <!-- En pareja -->
+    <div class="price-card">
+      <div class="price-name">En pareja</div>
+      <div class="price-amount"><sup>$</sup>1,100</div>
+      <div class="price-period">por pareja · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> 2 personas, 1 pago</div>
+        <div class="price-feature"><span class="check">✓</span> Mismo curso juntos</div>
+        <div class="price-feature"><span class="check">✓</span> La mejor experiencia de pareja</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%20plan%20en%20pareja" target="_blank" class="price-cta">Elegir plan</a>
+    </div>
+
+    <!-- Grupo 3 -->
+    <div class="price-card">
+      <div class="price-name">Grupo de 3</div>
+      <div class="price-amount"><sup>$</sup>1,350</div>
+      <div class="price-period">por grupo · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> 3 amigos, 1 pago</div>
+        <div class="price-feature"><span class="check">✓</span> Aprenden juntos</div>
+        <div class="price-feature"><span class="check">✓</span> Experiencia social completa</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%20plan%20grupo%203" target="_blank" class="price-cta">Elegir plan</a>
+    </div>
+
+    <!-- Kids -->
+    <div class="price-card">
+      <div class="price-name">Salsa Kids</div>
+      <div class="price-amount"><sup>$</sup>550</div>
+      <div class="price-period">al mes · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> Lunes y miércoles 7:00 pm</div>
+        <div class="price-feature"><span class="check">✓</span> Grupo pequeño y divertido</div>
+        <div class="price-feature"><span class="check">✓</span> Profesores especializados</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%20Salsa%20Kids" target="_blank" class="price-cta">Inscribir a mi hijo</a>
+    </div>
+
+    <!-- Anualidad -->
+    <div class="price-card" style="border-top:3px solid var(--red)">
+      <div class="price-name">Anualidad</div>
+      <div class="price-amount"><sup>$</sup>6,000</div>
+      <div class="price-period">al año por género · MXN</div>
+      <div class="price-divider"></div>
+      <div class="price-features">
+        <div class="price-feature"><span class="check">✓</span> Un año completo de clases</div>
+        <div class="price-feature"><span class="check">✓</span> El mejor precio por mes</div>
+        <div class="price-feature"><span class="check">✓</span> Prioridad en eventos</div>
+        <div class="price-feature"><span class="check">✓</span> Solo $500 al mes efectivo</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informar%20sobre%20la%20anualidad" target="_blank" class="price-cta">Consultar anualidad</a>
+    </div>
+
+  </div>
+
+  <p class="pricing-note reveal">
+    Todos los precios incluyen acceso a clases del género seleccionado. Los paquetes se pueden usar en hasta 2 meses. Puedes asistir en diferentes horarios dentro del mismo mes.
+  </p>
+</section>
+
+<!-- ─── CÓMO FUNCIONA ─── -->
+<section id="how">
+  <div class="section-tag">Sin complicaciones</div>
+  <h2 class="section-title reveal">Mensualidad <strong>vs</strong><br>Paquetes de clases</h2>
+  <div class="how-grid reveal">
+    <div class="how-card">
+      <div class="how-number">01</div>
+      <div class="how-title">Mensualidad — Para comprometidos</div>
+      <p class="how-text">Pago mensual fijo. Incluye <strong>todas las clases del mes</strong> del mismo género. Puedes asistir en diferentes horarios según tu disponibilidad.</p>
+      <div class="how-list">
+        <div class="how-item">Ideal si quieres progresar de forma constante</div>
+        <div class="how-item">Máximo aprovechamiento por precio</div>
+        <div class="how-item">Acceso a todos los horarios del género</div>
+        <div class="how-item">Planes desde $600 MXN al mes</div>
+      </div>
+    </div>
+    <div class="how-card">
+      <div class="how-number">02</div>
+      <div class="how-title">Paquetes — Para agendas variables</div>
+      <p class="how-text">Opciones de <strong>4 u 8 clases</strong> que puedes usar en un periodo de hasta 2 meses. No pierdes clases si tu agenda cambia.</p>
+      <div class="how-list">
+        <div class="how-item">Ideal si tienes poco tiempo libre</div>
+        <div class="how-item">Flexibilidad total de horario</div>
+        <div class="how-item">Clases válidas por 2 meses</div>
+        <div class="how-item">Desde $450 MXN por 4 clases</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCIA ─── -->
+<section id="experience">
+  <div class="section-tag">Por qué elegirnos</div>
+  <h2 class="section-title">Una experiencia<br><strong>que va más allá</strong></h2>
+  <div class="exp-grid reveal">
+    <div class="exp-card">
+      <div class="exp-icon">🎓</div>
+      <div class="exp-title">Aprendizaje real</div>
+      <p class="exp-text">Metodología progresiva y clara. Desde el primer paso hasta técnicas avanzadas. Nuestros instructores adaptan la enseñanza a cada alumno.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">🤝</div>
+      <div class="exp-title">Comunidad activa</div>
+      <p class="exp-text">No solo eres alumno, eres parte de una comunidad. Eventos, convivios y salidas que hacen del baile una experiencia social completa.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">🎉</div>
+      <div class="exp-title">Eventos y salidas</div>
+      <p class="exp-text">Aplicamos lo aprendido en la vida real. Noches de baile, competencias y eventos especiales para que pongas en práctica tu nuevo talento.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">💪</div>
+      <div class="exp-title">Confianza garantizada</div>
+      <p class="exp-text">Muchos alumnos llegaron sin ninguna experiencia. Hoy bailan con seguridad y disfrutando. El ambiente es 100% libre de juicios.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">🕐</div>
+      <div class="exp-title">Horarios flexibles</div>
+      <p class="exp-text">Múltiples horarios entre semana y fines de semana. Encuentra el que mejor se adapta a tu vida y nunca pierdas una clase.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-icon">📍</div>
+      <div class="exp-title">Ubicación céntrica</div>
+      <p class="exp-text">Estamos en Belisario Domínguez 1911, Guadalajara. Fácil de llegar, fácil de aparcar. Sin pretextos para no venir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESEÑAS ─── -->
+<section id="reviews">
+  <div class="reviews-header reveal">
+    <div class="overall-score">5.0</div>
+    <div class="reviews-meta">
+      <div class="stars">★★★★★</div>
+      <p>Valoración en Google · Basada en reseñas verificadas</p>
+    </div>
+  </div>
+  <div class="reviews-grid reveal">
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar">MR</div>
+        <div>
+          <div class="review-name">Mariana R.</div>
+          <div class="review-date">hace 2 semanas</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Increíble lugar para aprender a bailar. Los maestros son muy pacientes y el ambiente es súper agradable. Ya llevo 3 meses y noto un cambio enorme en mi confianza.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:#333">JL</div>
+        <div>
+          <div class="review-name">Jorge L.</div>
+          <div class="review-date">hace 1 mes</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Fui sin saber nada de baile y ahora ya voy a eventos de salsa con mis amigos. Los precios son muy accesibles y la calidad de enseñanza es excelente.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:#1a1a1a">AP</div>
+        <div>
+          <div class="review-name">Ana P.</div>
+          <div class="review-date">hace 3 semanas</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Vengo con mi novio desde hace 4 meses. Aprendimos salsa juntos y ha sido la mejor actividad que hemos hecho en pareja. 100% recomendado.</p>
+    </div>
+    <div class="review-card">
+      <div class="review-header">
+        <div class="review-avatar" style="background:#c8102e">CR</div>
+        <div>
+          <div class="review-name">Carlos R.</div>
+          <div class="review-date">hace 5 días</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">El nivel de los instructores es impresionante. No solo te enseñan pasos, te enseñan musicalidad y expresión. Una academia de verdad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIOS ─── -->
+<section id="testimonials">
+  <div class="section-tag">Historias reales</div>
+  <h2 class="section-title reveal">Lo que dicen<br><strong>nuestros alumnos</strong></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial reveal">
+      <p class="testimonial-quote">"Llegué sin saber ni moverme al ritmo de la música. Hoy tres meses después bailo en eventos, hice amigos increíbles y me siento completamente diferente cuando entro a una fiesta."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">S</div>
+        <div>
+          <div class="testimonial-name">Sofía, 24 años</div>
+          <div class="testimonial-detail">Alumna de Salsa y Bachata · 3 meses</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial reveal">
+      <p class="testimonial-quote">"Vine porque un amigo me convenció. Pensé que el baile no era para mí. Ahora no falta ningún martes. La comunidad que se forma aquí es algo que no esperaba y que ya no cambiaría."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">R</div>
+        <div>
+          <div class="testimonial-name">Rodrigo, 29 años</div>
+          <div class="testimonial-detail">Alumno de Salsa Cubana · 6 meses</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial reveal">
+      <p class="testimonial-quote">"Inscribí a mi hija en Salsa Kids y el cambio fue inmediato. Más confiada, más coordinada y siempre quiere ir. Los maestros son excelentes con los niños."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">V</div>
+        <div>
+          <div class="testimonial-name">Valeria, mamá</div>
+          <div class="testimonial-detail">Salsa Kids · 2 meses</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial reveal">
+      <p class="testimonial-quote">"El plan de 2 cursos es lo mejor. Tomo salsa y heels en la misma semana. Me ha dado una seguridad en mí misma que no tenía antes. Literalmente cambió mi forma de caminar."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">D</div>
+        <div>
+          <div class="testimonial-name">Daniela, 27 años</div>
+          <div class="testimonial-detail">Alumna de Salsa y Heels · 5 meses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── UBICACIÓN ─── -->
+<section id="location">
+  <div class="location-grid">
+    <div class="location-info reveal">
+      <div class="section-tag">Ubícanos</div>
+      <h2 class="section-title" style="color:var(--white)">Ubícanos en<br><strong>Guadalajara</strong></h2>
+      <div style="height:2px;width:48px;background:var(--red);margin:28px 0;"></div>
+      <div class="location-detail">
+        <span class="location-icon">📍</span>
+        <div>
+          <div class="location-label">Dirección</div>
+          <div class="location-value">Belisario Domínguez 1911<br>Guadalajara, Jalisco, México</div>
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="location-icon">📞</span>
+        <div>
+          <div class="location-label">Teléfono</div>
+          <div class="location-value"><a href="tel:+523311964499" style="color:rgba(255,255,255,0.8);text-decoration:none;">33 1196 4499</a></div>
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="location-icon">📸</span>
+        <div>
+          <div class="location-label">Instagram</div>
+          <div class="location-value"><a href="https://instagram.com/vonvati" target="_blank" style="color:rgba(255,255,255,0.8);text-decoration:none;">@vonvati</a></div>
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="location-icon">💳</span>
+        <div>
+          <div class="location-label">Métodos de pago</div>
+          <div class="location-value">Efectivo · Transferencia · Tarjeta</div>
+        </div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank" class="btn-primary" style="margin-top:12px;display:inline-block;">
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.0!2d-103.3496!3d20.6597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDM5JzM1LjIiTiAxMDPCsDIwJzU4LjYiVw!5e0!3m2!1ses!2smx!4v1680000000000!5m2!1ses!2smx&q=Belisario+Dom%C3%ADnguez+1911+Guadalajara"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND ─── -->
+<section id="cta">
+  <h2>¿Listo para dar<br><strong>el primer paso?</strong></h2>
+  <p>Únete a cientos de alumnos que ya descubrieron su lado bailable. Sin experiencia previa necesaria.</p>
+  <a href="https://wa.me/523311964499?text=Quiero%20inscribirme%20en%20Vonvati" target="_blank" class="btn-white">Únete hoy por WhatsApp</a>
+</section>
+
+<!-- ─── FORMULARIO ─── -->
+<section id="form-section">
+  <div class="form-wrapper">
+    <div class="form-intro reveal">
+      <div class="section-tag">Contáctanos</div>
+      <h2 class="section-title">¿Tienes dudas?<br><strong>Escríbenos</strong></h2>
+      <div class="divider"></div>
+      <p>Déjanos tu información y uno de nuestros asesores te contactará por WhatsApp para orientarte sobre el plan ideal para ti.</p>
+      <div class="payment-badges">
+        <div class="payment-badge">💵 Efectivo</div>
+        <div class="payment-badge">🏦 Transferencia</div>
+        <div class="payment-badge">💳 Tarjeta</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" placeholder="33 XXXX XXXX">
+        </div>
+        <div class="form-group">
+          <label for="level">Nivel de experiencia</label>
+          <select id="level">
+            <option value="">Selecciona tu nivel</option>
+            <option value="principiante">Principiante — No sé bailar nada</option>
+            <option value="basico">Básico — Sé algunos pasos</option>
+            <option value="intermedio">Intermedio — Bailo en fiestas</option>
+            <option value="avanzado">Avanzado — Quiero mejorar técnica</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="interest">Estilo de interés</label>
+          <select id="interest">
+            <option value="">¿Qué quieres aprender?</option>
+            <option value="salsa">Salsa</option>
+            <option value="bachata">Bachata</option>
+            <option value="cumbia">Cumbia</option>
+            <option value="cubana">Salsa Cubana</option>
+            <option value="house">House</option>
+            <option value="heels">Heels</option>
+            <option value="kids">Salsa Kids</option>
+            <option value="varios">Varios estilos</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="sendToWhatsApp()">Enviar por WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Vonvati<span>.</span></div>
+      <p class="footer-tagline">Escuela de baile boutique en Guadalajara. Donde el ritmo transforma vidas desde el primer paso.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Clases</h4>
+      <ul class="footer-links">
+        <li><a href="#classes">Salsa</a></li>
+        <li><a href="#classes">Bachata</a></li>
+        <li><a href="#classes">Cumbia</a></li>
+        <li><a href="#classes">Salsa Cubana</a></li>
+        <li><a href="#classes">House · Heels</a></li>
+        <li><a href="#classes">Salsa Kids</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+523311964499">33 1196 4499</a></li>
+        <li><a href="https://instagram.com/vonvati" target="_blank">@vonvati</a></li>
+        <li><a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank">WhatsApp</a></li>
+        <li><a href="#location">Belisario Domínguez 1911</a></li>
+        <li><a href="#location">Guadalajara, Jalisco</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Vonvati World Academy. Todos los derechos reservados.</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/vonvati" target="_blank" title="Instagram">IG</a>
+      <a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank" title="WhatsApp">WA</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── WHATSAPP FLOAT ─── -->
+<a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank" class="wa-float" title="Escríbenos por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  // WhatsApp form send
+  function sendToWhatsApp() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('whatsapp').value.trim();
+    const level = document.getElementById('level').value;
+    const interest = document.getElementById('interest').value;
+    if (!name || !phone) { alert('Por favor ingresa tu nombre y WhatsApp.'); return; }
+    const levelLabels = {
+      principiante: 'Principiante', basico: 'Básico', intermedio: 'Intermedio', avanzado: 'Avanzado'
+    };
+    const interestLabels = {
+      salsa: 'Salsa', bachata: 'Bachata', cumbia: 'Cumbia', cubana: 'Salsa Cubana',
+      house: 'House', heels: 'Heels', kids: 'Salsa Kids', varios: 'Varios estilos'
+    };
+    const msg = `Hola! Me llamo ${name}. Quiero informes sobre clases.%0ANivel: ${levelLabels[level] || 'No especificado'}%0AInterés: ${interestLabels[interest] || 'No especificado'}%0AMi WhatsApp: ${phone}`;
+    window.open(`https://wa.me/523311964499?text=${msg}`, '_blank');
+  }
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '12px 5%';
+    } else {
+      nav.style.padding = '18px 5%';
+    }
+  });
+</script>
+
+</body>
+</html>
