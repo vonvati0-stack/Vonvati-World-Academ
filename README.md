@@ -738,9 +738,10 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
     <p>Desde la salsa más elegante hasta los ritmos más urbanos. Tenemos el estilo perfecto para ti, sin importar tu nivel.</p>
   </div>
   <div class="classes-scroll rv d1">
-    <!-- SALSA -->
+
+    <!-- SALSA — pareja bailando salsa latina vibrante -->
     <div class="cls-card">
-      <img src="https://images.unsplash.com/photo-1545959570-a94084071b5d?w=600&q=80&fit=crop&crop=faces" alt="Salsa" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=700&h=900&q=85&fit=crop&crop=center" alt="Clases de Salsa Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <span class="cls-tag">Principal</span>
@@ -748,54 +749,60 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
         <div class="cls-desc">Ritmo, elegancia y sabor latino en cada paso. Nuestro estilo estrella.</div>
       </div>
     </div>
-    <!-- BACHATA -->
+
+    <!-- BACHATA — pareja en posición de bachata sensual -->
     <div class="cls-card">
-      <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=600&q=80&fit=crop&crop=faces" alt="Bachata" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=700&h=900&q=85&fit=crop&crop=center" alt="Clases de Bachata Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <div class="cls-name">Bachata</div>
         <div class="cls-desc">Sensual y expresiva. El baile de pareja más popular del mundo.</div>
       </div>
     </div>
-    <!-- CUMBIA -->
+
+    <!-- CUMBIA — baile grupal festivo y colorido -->
     <div class="cls-card">
-      <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=600&q=80&fit=crop&crop=center" alt="Cumbia" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=700&h=900&q=85&fit=crop&crop=center" alt="Clases de Cumbia Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <div class="cls-name">Cumbia</div>
         <div class="cls-desc">Raíces mexicanas, alegría pura. Aprende a bailar lo que todos bailan.</div>
       </div>
     </div>
-    <!-- CUBANA -->
+
+    <!-- SALSA CUBANA — baile latino pareja -->
     <div class="cls-card">
-      <img src="https://images.unsplash.com/photo-1519925610903-381054cc2a1c?w=600&q=80&fit=crop&crop=center" alt="Salsa Cubana" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1519925610903-381054cc2a1c?w=700&h=900&q=85&fit=crop&crop=center" alt="Salsa Cubana Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <div class="cls-name">Salsa Cubana</div>
         <div class="cls-desc">Círculos, casino y sabor caribeño. Baile social por excelencia.</div>
       </div>
     </div>
-    <!-- HOUSE -->
+
+    <!-- HOUSE — bailarín urbano con energía callejera -->
     <div class="cls-card">
-      <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=80&fit=crop&crop=center" alt="House Dance" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=700&h=900&q=85&fit=crop&crop=center" alt="House Dance Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <div class="cls-name">House</div>
         <div class="cls-desc">Estilo urbano con roots en Chicago. Groove, libertad y expresión.</div>
       </div>
     </div>
-    <!-- HEELS -->
+
+    <!-- HEELS — chicas en tacones bailando -->
     <div class="cls-card">
-      <img src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=600&q=80&fit=crop&crop=center" alt="Heels Dance" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&h=900&q=85&fit=crop&crop=center" alt="Heels Dance Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <div class="cls-name">Heels</div>
-        <div class="cls-desc">Empoderamiento femenino. Fuerza, sensualidad y actitud.</div>
+        <div class="cls-desc">Empoderamiento femenino. Fuerza, sensualidad y actitud en cada movimiento.</div>
       </div>
     </div>
-    <!-- KIDS - wide card -->
+
+    <!-- SALSA KIDS — niños bailando latino -->
     <div class="cls-card cls-kids">
-      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80&fit=crop&crop=center" alt="Salsa Kids" loading="lazy" style="object-position:center top">
+      <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=1400&h=600&q=85&fit=crop&crop=center" alt="Salsa Kids Guadalajara" loading="lazy">
       <div class="cls-overlay"></div>
       <div class="cls-content">
         <span class="cls-tag">Niños</span>
@@ -803,6 +810,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
         <div class="cls-desc">Para los más pequeños. Lunes y miércoles 7:00 pm · $550 MXN/mes</div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -840,6 +848,20 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
         <div class="p-feat"><span class="ck">✓</span> Agenda flexible</div>
       </div>
       <a href="https://wa.me/523311964499?text=Quiero%20el%20paquete%20de%204%20clases" target="_blank" class="p-btn">Elegir plan</a>
+    </div>
+
+    <div class="p-card rv d3">
+      <div class="p-label">Paquete 8 clases</div>
+      <div class="p-price"><sup>$</sup>600</div>
+      <div class="p-period">válido 2 meses · MXN</div>
+      <div class="p-line"></div>
+      <div class="p-feats">
+        <div class="p-feat"><span class="ck">✓</span> 8 clases, más ahorro</div>
+        <div class="p-feat"><span class="ck">✓</span> Válidas por 2 meses</div>
+        <div class="p-feat"><span class="ck">✓</span> Solo $75 por clase</div>
+        <div class="p-feat"><span class="ck">✓</span> Ideal para ir 2 veces/semana</div>
+      </div>
+      <a href="https://wa.me/523311964499?text=Quiero%20el%20paquete%20de%208%20clases" target="_blank" class="p-btn">Elegir plan</a>
     </div>
 
     <div class="p-card rv d3">
@@ -1018,11 +1040,11 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
 
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
-  <div class="gs-img"><img src="https://images.unsplash.com/photo-1545959570-a94084071b5d?w=500&q=75&fit=crop" alt="Baile salsa" loading="lazy"></div>
-  <div class="gs-img"><img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=500&q=75&fit=crop" alt="Clases de bachata" loading="lazy"></div>
-  <div class="gs-img"><img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=500&q=75&fit=crop" alt="Ambiente Vonvati" loading="lazy"></div>
-  <div class="gs-img"><img src="https://images.unsplash.com/photo-1519925610903-381054cc2a1c?w=500&q=75&fit=crop" alt="Grupo de baile" loading="lazy"></div>
-  <div class="gs-img"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&q=75&fit=crop" alt="Comunidad bailando" loading="lazy"></div>
+  <div class="gs-img"><img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=500&h=300&q=80&fit=crop&crop=center" alt="Salsa" loading="lazy"></div>
+  <div class="gs-img"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&h=300&q=80&fit=crop&crop=center" alt="Bachata" loading="lazy"></div>
+  <div class="gs-img"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=500&h=300&q=80&fit=crop&crop=center" alt="Cumbia" loading="lazy"></div>
+  <div class="gs-img"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=500&h=300&q=80&fit=crop&crop=center" alt="House" loading="lazy"></div>
+  <div class="gs-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&h=300&q=80&fit=crop&crop=top" alt="Heels" loading="lazy"></div>
 </div>
 
 <!-- REVIEWS -->
@@ -1035,38 +1057,133 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
     </div>
   </div>
   <div class="reviews-grid">
+
     <div class="rv-card rv d1">
       <div class="rv-head">
-        <div class="rv-av" style="background:#1a1a2e">MR</div>
-        <div><div class="rv-name">Mariana R.</div><div class="rv-date">hace 2 semanas</div></div>
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Tavo">
+        <div><div class="rv-name">Tavo</div><div class="rv-date">hace 3 días</div></div>
       </div>
       <div class="rv-stars">★★★★★</div>
-      <p class="rv-text">Increíble lugar para aprender a bailar. Los maestros son muy pacientes y el ambiente es súper agradable. Ya llevo 3 meses y noto un cambio enorme en mi confianza al bailar en eventos.</p>
+      <p class="rv-text">Increíble academia. Los maestros te hacen sentir cómodo desde el primer día. Ya llevo 2 meses y el cambio en mi forma de bailar es notorio. Totalmente recomendado.</p>
     </div>
+
     <div class="rv-card rv d2">
       <div class="rv-head">
-        <div class="rv-av" style="background:#2d2d2d">JL</div>
-        <div><div class="rv-name">Jorge L.</div><div class="rv-date">hace 1 mes</div></div>
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Hugo">
+        <div><div class="rv-name">Hugo</div><div class="rv-date">hace 1 semana</div></div>
       </div>
       <div class="rv-stars">★★★★★</div>
-      <p class="rv-text">Fui sin saber nada de baile y ahora ya voy a eventos de salsa con mis amigos. Los precios son muy accesibles y la calidad de enseñanza es excelente. 100% recomendado.</p>
+      <p class="rv-text">Fui sin saber absolutamente nada de baile y ahora ya voy a eventos de salsa. Los precios son muy accesibles y la enseñanza de verdad se nota. 10/10.</p>
     </div>
+
     <div class="rv-card rv d3">
       <div class="rv-head">
-        <div class="rv-av" style="background:#c8102e">AP</div>
-        <div><div class="rv-name">Ana P.</div><div class="rv-date">hace 3 semanas</div></div>
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Angie">
+        <div><div class="rv-name">Angie</div><div class="rv-date">hace 2 semanas</div></div>
       </div>
       <div class="rv-stars">★★★★★</div>
-      <p class="rv-text">Vengo con mi novio desde hace 4 meses. Aprendimos salsa juntos y ha sido la mejor actividad que hemos hecho en pareja. El ambiente es increíble y los maestros son lo mejor.</p>
+      <p class="rv-text">Lo mejor que hice fue inscribirme aquí. Aprendí salsa y bachata al mismo tiempo. La comunidad es increíble y los convivios mensuales son lo mejor.</p>
     </div>
+
     <div class="rv-card rv d4">
       <div class="rv-head">
-        <div class="rv-av" style="background:#333">CR</div>
-        <div><div class="rv-name">Carlos R.</div><div class="rv-date">hace 5 días</div></div>
+        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Marlene">
+        <div><div class="rv-name">Marlene</div><div class="rv-date">hace 3 semanas</div></div>
       </div>
       <div class="rv-stars">★★★★★</div>
-      <p class="rv-text">El nivel de los instructores es impresionante. No solo te enseñan pasos, te enseñan musicalidad y expresión corporal. Es una academia de baile de verdad, no un curso cualquiera.</p>
+      <p class="rv-text">Vine con mi novio y fue la mejor decisión. Aprendimos salsa juntos, los maestros son súper pacientes y el ambiente es muy agradable. Ya somos parte de la comunidad.</p>
     </div>
+
+    <div class="rv-card rv d1">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Cruz">
+        <div><div class="rv-name">Cruz</div><div class="rv-date">hace 1 mes</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">El nivel de los instructores es impresionante. No solo enseñan pasos, te enseñan musicalidad y conexión con la música. Una academia seria y profesional.</p>
+    </div>
+
+    <div class="rv-card rv d2">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Isra">
+        <div><div class="rv-name">Isra</div><div class="rv-date">hace 1 mes</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Tomé el paquete de 8 clases primero para probar y me encantó tanto que ya me inscribí en mensualidad. Vale cada peso, el ambiente es de 10.</p>
+    </div>
+
+    <div class="rv-card rv d3">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Miriam">
+        <div><div class="rv-name">Miriam</div><div class="rv-date">hace 5 días</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Empecé con heels y me cambió la vida. La maestra es increíble y te da confianza en cada clase. Ahora también tomo salsa y no me arrepiento para nada.</p>
+    </div>
+
+    <div class="rv-card rv d4">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Fer">
+        <div><div class="rv-name">Fer</div><div class="rv-date">hace 2 semanas</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Súper contenta con Vonvati. Llevo 4 meses y ya bailo en eventos sociales con seguridad total. Antes ni siquiera salía a la pista. El cambio es real.</p>
+    </div>
+
+    <div class="rv-card rv d1">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Marbella">
+        <div><div class="rv-name">Marbella</div><div class="rv-date">hace 4 días</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Los horarios son muy flexibles y eso me ayudó mucho. Puedo ir en el horario que me acomoda cada semana. Excelente opción para personas con trabajo de tiempo completo.</p>
+    </div>
+
+    <div class="rv-card rv d2">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Jenny">
+        <div><div class="rv-name">Jenny</div><div class="rv-date">hace 6 días</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Inscribí a mis hijos en Salsa Kids y están felices. El maestro los trata increíble y ya empiezan a soltarse y disfrutar la música. Muy recomendada para niños.</p>
+    </div>
+
+    <div class="rv-card rv d3">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Fabby">
+        <div><div class="rv-name">Fabby</div><div class="rv-date">hace 2 semanas</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">El plan de 2 cursos es lo mejor que existe. Tomo bachata y cumbia y el precio es muy accesible. Los maestros son apasionados y eso se contagia.</p>
+    </div>
+
+    <div class="rv-card rv d4">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Cecy">
+        <div><div class="rv-name">Cecy</div><div class="rv-date">hace 3 semanas</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Definitivamente el mejor lugar para aprender a bailar en Guadalajara. Ambiente profesional pero con mucha calidez humana. Ya les recomendé a todos mis amigos.</p>
+    </div>
+
+    <div class="rv-card rv d1">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Alex">
+        <div><div class="rv-name">Alex</div><div class="rv-date">hace 1 semana</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Vine a probar con una clase suelta y ya no me fui. La metodología es muy clara y en pocas clases ya se notan los resultados. Los eventos sociales son increíbles.</p>
+    </div>
+
+    <div class="rv-card rv d2">
+      <div class="rv-head">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&h=80&q=80&fit=crop&crop=face" class="rv-av" style="object-fit:cover;border-radius:50%;width:44px;height:44px;" alt="Emmanuel">
+        <div><div class="rv-name">Emmanuel</div><div class="rv-date">hace 5 días</div></div>
+      </div>
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Llevo 6 meses en salsa cubana y cada clase aprendo algo nuevo. Los maestros saben muchísimo y se nota el amor que le tienen a lo que hacen. Lugar único en GDL.</p>
+    </div>
+
   </div>
 </section>
 
@@ -1080,7 +1197,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
       <div class="testi-body">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-q">"Llegué sin saber ni moverme al ritmo de la música. Hoy, tres meses después, bailo en eventos, hice amigos increíbles y me siento completamente diferente cuando entro a una fiesta."</p>
-        <div class="testi-name">Sofía Martínez</div>
+        <div class="testi-name">Angie</div>
         <div class="testi-detail">Salsa y Bachata · 3 meses en Vonvati</div>
       </div>
     </div>
@@ -1089,7 +1206,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
       <div class="testi-body">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-q">"Vine porque un amigo me convenció. Pensé que el baile no era para mí. Ahora no falta ningún martes. La comunidad que se forma aquí es algo que no esperaba y que ya no cambiaría."</p>
-        <div class="testi-name">Rodrigo Herrera</div>
+        <div class="testi-name">Hugo</div>
         <div class="testi-detail">Salsa Cubana · 6 meses en Vonvati</div>
       </div>
     </div>
@@ -1098,7 +1215,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
       <div class="testi-body">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-q">"Inscribí a mi hija en Salsa Kids y el cambio fue inmediato. Más confiada, más coordinada y siempre quiere ir. Los maestros son excelentes con los niños, muy recomendada."</p>
-        <div class="testi-name">Valeria Torres</div>
+        <div class="testi-name">Jenny</div>
         <div class="testi-detail">Mamá · Salsa Kids · 2 meses</div>
       </div>
     </div>
@@ -1107,7 +1224,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
       <div class="testi-body">
         <div class="testi-stars">★★★★★</div>
         <p class="testi-q">"El plan de 2 cursos es lo mejor. Tomo salsa y heels en la misma semana. Me ha dado una seguridad en mí misma que no tenía. Literalmente cambió mi forma de caminar y de sentirme."</p>
-        <div class="testi-name">Daniela Ríos</div>
+        <div class="testi-name">Miriam</div>
         <div class="testi-detail">Salsa y Heels · 5 meses en Vonvati</div>
       </div>
     </div>
@@ -1125,7 +1242,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
         <span class="loc-icon">📍</span>
         <div>
           <div class="loc-lbl">Dirección</div>
-          <div class="loc-val">Belisario Domínguez 1911<br>Guadalajara, Jalisco, México</div>
+          <div class="loc-val">Belisario Domínguez 1911<br>Col. Monumental<br>Guadalajara, Jalisco, México</div>
         </div>
       </div>
       <div class="loc-detail">
@@ -1249,7 +1366,7 @@ footer{background:var(--ink);padding:70px 6% 36px;border-top:1px solid rgba(255,
         <li><a href="https://instagram.com/vonvati" target="_blank">@vonvati</a></li>
         <li><a href="https://wa.me/523311964499?text=Quiero%20informes%20de%20las%20clases" target="_blank">WhatsApp</a></li>
         <li><a href="#location">Belisario Domínguez 1911</a></li>
-        <li><a href="#location">Guadalajara, Jalisco</a></li>
+        <li><a href="#location">Col. Monumental, Guadalajara</a></li>
       </ul>
     </div>
   </div>
